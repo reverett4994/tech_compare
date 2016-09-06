@@ -1,0 +1,102 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<%@amazon_search=@display.name.to_s%>
+<% res = Amazon::Ecs.item_search(@amazon_search, :search_index => 'All',)%>
+<% @matchs=res.items%>
+<%@match=@matchs.at(0)%>
+<%@asin=@match.get('ASIN')%>
+
+
+<%= link_to 'Amazon Page',@match.get('DetailPageURL')%>
+<%@match.get('DetailPageURL')%>
+
+<% @product = Amazon::Ecs.item_search(@asin, :search_index => 'All',:response_group =>'Offers')%>
+
+<%@product.items.each do |item|%>
+  
+  <%@amazon_price=item.get('Offers/Offer/OfferListing/Price/FormattedPrice')%>
+
+<%end%>
+
+
+
+
+<h1><%= link_to (@display.name),'#',:id=>'show_link', remote: true%></h1>
+
+
+<div class='show'>
+    <%= image_tag @display.image.url,:class=>'image' %>
+    <p>
+    <strong>Price:</strong>
+    <%=link_to @amazon_price,@match.get('DetailPageURL')%>
+  </p>
+    <p>
+    <strong>Brand:</strong>
+    <%= @display.brand %>
+  </p>
+  <p>
+    <strong>Resolution:</strong>
+    <%= @display.resolution %>
+  </p>
+
+  <p>
+    <strong>Aspect ratio:</strong>
+    <%= @display.aspect_ratio %>
+  </p>
+
+  <p>
+    <strong>Size:</strong>
+    <%= @display.size %> in.
+  </p>
+
+  <p>
+    <strong>Ports:</strong>
+    <%= @display.ports %>
+  </p>
+
+  <p>
+    <strong>Response time:</strong>
+    <%= @display.response_time %> ms
+  </p>
+
+  <p>
+    <strong>Refresh rate:</strong>
+    <%= @display.refresh_rate %> Hz
+  </p>
+
+  <p>
+    <strong>Speakers:</strong>
+    <%= @display.speakers %>
+  </p>
+
+  <p>
+    <strong>Dimensions:</strong>
+    <%= @display.dimensions %>
+  </p>
+
+  <p>
+    <strong>Panel:</strong>
+    <%= @display.panel %>
+  </p>
+
+  <p>
+    <strong>Release:</strong>
+    <%= @display.release.to_formatted_s(:month_comma_year)   %>
+  </p>
+
+  <p>
+    <strong>Stand misc:</strong>
+    <%= @display.stand_misc %>
+  </p>
+
+  <p>
+    <strong>Gpu sync:</strong>
+    <%= @display.gpu_sync %>
+  </p>
+</div>
+<%= link_to 'Edit', edit_display_path(@display) %> |
+<%= link_to 'Back', displays_path %>
+
+<%=@display.resolution.to_d%>

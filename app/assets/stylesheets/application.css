@@ -1,0 +1,63 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require jquery-ui
+
+ */
+.image{
+    height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+    border-radius: 3px;
+    display: inline-block;
+}
+.display1{
+	display: inline-block;
+	width: 33%;
+	background-color: red;
+	float: left;
+}
+
+.display2{
+	display: inline-block;
+	width: 33%;
+	background-color: blue;
+}
+
+#compare_table{
+	width: 100%
+}
+#compare_table th{
+	
+	text-align: left;
+}
+#compare_table tr:hover{
+	background-color: #f5f5f5
+}
+#compare_table th,td{
+	border-bottom: 1px solid #ddd;
+	width: 20%;
+	padding: 15px;
+}
+ #compare_table th{
+	background-color: red;
+}
+#compare_table img{
+	height: 200px;
+	width: 200px;
+}
+#compare_table td.winner{
+	background-color: #99ff99;
+}

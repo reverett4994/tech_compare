@@ -1,0 +1,2 @@
+json.extract! display, :id, :Price, :name, :resolution, :brand, :aspect_ratio, :size, :ports, :response_time, :refresh_rate, :speakers, :dimensions, :panel, :release, :stand_misc, :gpu_sync, :created_at, :updated_at
+json.url display_url(display, format: :json)

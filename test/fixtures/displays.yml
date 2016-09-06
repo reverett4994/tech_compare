@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Price: 9.99
+  name: MyString
+  resolution: MyString
+  brand: MyString
+  aspect_ratio: MyString
+  size: 9.99
+  ports: MyString
+  response_time: 9.99
+  refresh_rate: 9.99
+  speakers: false
+  dimensions: MyString
+  panel: MyString
+  release: 2016-09-01
+  stand_misc: MyString
+  gpu_sync: MyString
+
+two:
+  Price: 9.99
+  name: MyString
+  resolution: MyString
+  brand: MyString
+  aspect_ratio: MyString
+  size: 9.99
+  ports: MyString
+  response_time: 9.99
+  refresh_rate: 9.99
+  speakers: false
+  dimensions: MyString
+  panel: MyString
+  release: 2016-09-01
+  stand_misc: MyString
+  gpu_sync: MyString

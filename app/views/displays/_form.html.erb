@@ -1,0 +1,79 @@
+<%= form_for(@display, html: { multipart: true }) do |f| %>
+  <% if @display.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@display.errors.count, "error") %> prohibited this display from being saved:</h2>
+
+      <ul>
+      <% @display.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Price %><br>
+    <%= f.text_field :Price %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+    <%= f.file_field :image %>
+  <div class="field">
+    <%= f.label :resolution %><br>
+    <%= f.text_field :resolution %>
+  </div>
+  <div class="field">
+    <%= f.label :brand %><br>
+    <%= f.text_field :brand %>
+  </div>
+  <div class="field">
+    <%= f.label :aspect_ratio %><br>
+    <%= f.text_field :aspect_ratio %>
+  </div>
+  <div class="field">
+    <%= f.label :size %><br>
+    <%= f.text_field :size %>
+  </div>
+  <div class="field">
+    <%= f.label :ports %><br>
+    <%= f.text_field :ports %>
+  </div>
+  <div class="field">
+    <%= f.label :response_time %><br>
+    <%= f.text_field :response_time %>
+  </div>
+  <div class="field">
+    <%= f.label :refresh_rate %><br>
+    <%= f.text_field :refresh_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :speakers %><br>
+    <%= f.check_box :speakers %>
+  </div>
+  <div class="field">
+    <%= f.label :dimensions %><br>
+    <%= f.text_field :dimensions %>
+  </div>
+  <div class="field">
+    <%= f.label :panel %><br>
+    <%= f.text_field :panel %>
+  </div>
+  <div class="field">
+    <%= f.label :release %><br>
+    <%= f.date_select :release %>
+  </div>
+  <div class="field">
+    <%= f.label :stand_misc %><br>
+    <%= f.text_field :stand_misc %>
+  </div>
+  <div class="field">
+    <%= f.label :gpu_sync %><br>
+    <%= f.text_field :gpu_sync %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

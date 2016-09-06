@@ -1,0 +1,1 @@
+Date::DATE_FORMATS[:month_comma_year] = "%B, %Y" # January, 2015

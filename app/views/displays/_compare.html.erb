@@ -1,0 +1,240 @@
+<p id="notice"><%= notice %></p>
+
+<%@amazon_search=@display.name.to_s%>
+<% res = Amazon::Ecs.item_search(@amazon_search, :search_index => 'All',)%>
+<% @matchs=res.items%>
+<%@match=@matchs.at(0)%>
+<%@asin=@match.get('ASIN')%>
+
+
+<%= link_to 'Amazon Page',@match.get('DetailPageURL')%>
+<%@match.get('DetailPageURL')%>
+
+<% @product = Amazon::Ecs.item_search(@asin, :search_index => 'All',:response_group =>'Offers')%>
+
+<%@product.items.each do |item|%>
+  
+  <%@amazon_price1=item.get('Offers/Offer/OfferListing/Price/FormattedPrice')%>
+
+<%end%>
+
+
+<%@amazon_search=@display2.name.to_s%>
+<% res2 = Amazon::Ecs.item_search(@amazon_search, :search_index => 'All',)%>
+<% @matchs2=res2.items%>
+<%@match2=@matchs2.at(0)%>
+<%@asin2=@match2.get('ASIN')%>
+
+
+<%= link_to 'Amazon Page',@match2.get('DetailPageURL')%>
+<%@match2.get('DetailPageURL')%>
+
+<% @product2 = Amazon::Ecs.item_search(@asin2, :search_index => 'All',:response_group =>'Offers')%>
+
+<%@product2.items.each do |item|%>
+  
+  <%@amazon_price2=item.get('Offers/Offer/OfferListing/Price/FormattedPrice')%>
+
+<%end%>
+
+
+
+
+
+
+<table id='compare_table'>
+  
+    <tr id='table_head'>
+       <th>Categories</th>
+       <th><%= link_to @display.name,@display %></th>
+       <th>??????????????????????????</th>
+       <th><%= link_to @display2.name,@display2 %></th>
+    </tr>
+        
+
+    <tr>
+      <td> </td>
+      <td> <%=link_to (image_tag(@display.image.url)),@display%> </td>
+      <td>?????</td>
+      <td> <%=link_to (image_tag(@display2.image.url)),@display2%> </td>
+     
+    <tr>
+       <td>Name</td>
+       <td><%= @display.name %></td>
+       <td>?????</td>
+       <td><%= @display2.name %></td>
+
+    </tr>
+    <tr>
+      <td>Price</td>
+      
+        <% if  @display.Price< @display2.Price%>
+          <td class='winner'><%= link_to @amazon_price1,@match.get('DetailPageURL') %></td>
+        <%else%>
+          <td><%= link_to @amazon_price1,@match.get('DetailPageURL') %></td>
+        <%end%>
+      <td> ??????</td>
+        <% if  @display2.Price< @display.Price%>
+          <td class='winner'><%= link_to @amazon_price2,@match2.get('DetailPageURL') %></td>
+        <%else%>
+          <td><%= link_to @amazon_price2,@match2.get('DetailPageURL') %></td>
+        <%end%>      
+
+    </tr>
+
+    <tr>
+      <td>Resolution</td>
+        <% if  @display.resolution.to_d > @display2.resolution.to_d%>
+          <td class='winner'><%= @display.resolution %></td>
+        <%else%>
+          <td><%= @display.resolution %></td>
+        <%end%>          
+        
+        <td>?????</td>
+        <% if  @display2.resolution.to_d > @display.resolution.to_d%>
+          <td class='winner'><%= @display2.resolution %></td>
+        <%else%>
+          <td><%= @display2.resolution %></td>
+        <%end%>         
+
+    </tr>
+    <tr>
+      <td>Brand</td>
+        <td><%= @display.brand %></td>
+        <td>?????</td>
+        <td><%= @display2.brand %></td>
+
+    </tr>
+    <tr>
+      <td>Aspect ratio</td>
+        <td><%= @display.aspect_ratio %></td>
+        <td>?????</td>
+        <td><%= @display2.aspect_ratio %></td>
+
+    </tr>
+     <tr>
+      <td>Size</td>
+        <td><%= @display.size %>''</td>
+        <td>?????</td>
+        <td><%= @display2.size %>''</td>
+
+    </tr>
+    <tr>
+      <td>Ports</td>
+        <td><%= @display.ports %></td>
+        <td>?????</td>
+        <td><%= @display2.ports %></td>
+
+    </tr>
+    <tr>
+      <td>Response time</td>
+        <% if  @display.response_time < @display2.response_time%>
+          <td class='winner'><%= @display.response_time %> ms</td>
+        <%else%>
+          <td><%= @display.response_time %> ms</td>
+        <%end%>      
+        
+        <td>?????</td>
+        <% if  @display2.response_time < @display.response_time%>
+          <td class='winner'><%= @display2.response_time %> ms</td>
+        <%else%>
+          <td><%= @display2.response_time %> ms</td>
+        <%end%>  
+
+    </tr>
+    <tr>
+      <td>Refresh rate</td>
+        <% if  @display.refresh_rate > @display2.refresh_rate%>
+          <td class='winner'><%= @display.refresh_rate %> Hz</td>
+        <%else%>
+          <td><%= @display.refresh_rate %> Hz</td>
+        <%end%>        
+        <td>?????</td>
+        <% if  @display2.refresh_rate > @display.refresh_rate%>
+          <td class='winner'><%= @display2.refresh_rate %> Hz</td>
+        <%else%>
+          <td><%= @display2.refresh_rate %> Hz</td>
+        <%end%>    
+
+    </tr>
+     <tr>
+      <td>Speakers</td>
+        <% if  @display.speakers==true && @display2.speakers==false%>
+          <td class='winner'><%= @display.speakers %></td>
+        <%else%>
+          <td><%= @display.speakers %></td>
+        <%end%>            
+        
+        <td>?????</td>
+        <% if  @display2.speakers==true && @display.speakers==false%>
+          <td class='winner'><%= @display2.speakers %></td>
+        <%else%>
+          <td><%= @display2.speakers %></td>
+        <%end%>    
+
+    </tr>
+    <tr>
+      <td>Dimensions</td>
+        <td><%= @display.dimensions %></td>
+        <td>?????</td>
+        <td><%= @display2.dimensions %></td>
+
+    </tr>
+    <tr>
+      <td>Panel</td>
+        <td><%= @display.panel %></td>
+        <td>?????</td>
+        <td><%= @display2.panel %></td>
+
+    </tr>
+    <tr>
+      <td>Release</td>
+        <td><%= @display.release %></td>
+        <td>?????</td>
+        <td><%= @display2.release %></td>
+
+    </tr>
+    <tr>
+      <td>Stand misc</td>
+        <td><%= @display.stand_misc %></td>
+        <td>?????</td>
+        <td><%= @display2.stand_misc %></td>
+
+    </tr>
+    <tr>
+      <td>g/free sync</td>
+        <% if  @display.gpu_sync.length>5 && @display2.gpu_sync.length<5 %>
+          <td class='winner'><%= @display.gpu_sync %> </td>
+        <%else%>
+          <td><%= @display.gpu_sync %></td>
+        <%end%>        
+        
+        <td>?????</td>
+        <% if  @display2.gpu_sync.length>5 && @display.gpu_sync.length<5 %>
+          <td class='winner'><%= @display2.gpu_sync %> </td>
+        <%else%>
+          <td><%= @display2.gpu_sync %></td>
+        <%end%> 
+
+    </tr>  
+ 
+</table>
+
+      
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+
+
