@@ -15,26 +15,21 @@
  *= require jquery-ui
 
  */
-.image{
-    height: auto; 
-    width: auto; 
-    max-width: 300px; 
-    max-height: 300px;
-    border-radius: 3px;
-    display: inline-block;
+  /********************************************EVERY PAGE******************************************/
+
+a{
+	color: black;
 }
-.display1{
-	display: inline-block;
-	width: 33%;
-	background-color: red;
-	float: left;
+iframe{
+	width: 95%;
+	height:50em; 
+
+}
+#reviews{
+	display: none;
 }
 
-.display2{
-	display: inline-block;
-	width: 33%;
-	background-color: blue;
-}
+ /********************************************COMPARE PAGE******************************************/
 
 #compare_table{
 	width: 100%
@@ -60,4 +55,59 @@
 }
 #compare_table td.winner{
 	background-color: #99ff99;
+}
+ /********************************************INDEX******************************************/
+/*http://www.flaticon.com     <-- for more icons use*/
+
+#index_table{
+	width: 100%
+}
+#index_table th{
+	
+	text-align: left;
+}
+#index_table tr:hover{
+	background-color: #f5f5f5
+}
+#index_table th,td{
+	border-bottom: 1px solid #ddd;
+	width: 20%;
+	padding: 15px;
+}
+ #index_table th{
+	background-color: #f2f2f2;
+}
+#index_table img{
+	height: 200px;
+	width: 200px;
+}
+
+
+#index_table th {
+	padding-right: 24px;
+}
+#index_table th .asc{
+	padding-right: 24px;
+	background-image: url('up-arrow.png');
+  	background-repeat: no-repeat;
+  	background-position: right;
+	
+}
+#index_table th .desc{
+	padding-right: 24px;
+	background-image: url('down-arrow.png');
+	background-repeat: no-repeat;
+  	background-position: right;
+}
+
+
+
+
+.image{
+    height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+    border-radius: 3px;
+    display: inline-block;
 }

@@ -47,7 +47,6 @@
     <tr id='table_head'>
        <th>Categories</th>
        <th><%= link_to @display.name,@display %></th>
-       <th>??????????????????????????</th>
        <th><%= link_to @display2.name,@display2 %></th>
     </tr>
         
@@ -55,13 +54,11 @@
     <tr>
       <td> </td>
       <td> <%=link_to (image_tag(@display.image.url)),@display%> </td>
-      <td>?????</td>
       <td> <%=link_to (image_tag(@display2.image.url)),@display2%> </td>
      
     <tr>
        <td>Name</td>
        <td><%= @display.name %></td>
-       <td>?????</td>
        <td><%= @display2.name %></td>
 
     </tr>
@@ -73,7 +70,6 @@
         <%else%>
           <td><%= link_to @amazon_price1,@match.get('DetailPageURL') %></td>
         <%end%>
-      <td> ??????</td>
         <% if  @display2.Price< @display.Price%>
           <td class='winner'><%= link_to @amazon_price2,@match2.get('DetailPageURL') %></td>
         <%else%>
@@ -90,7 +86,6 @@
           <td><%= @display.resolution %></td>
         <%end%>          
         
-        <td>?????</td>
         <% if  @display2.resolution.to_d > @display.resolution.to_d%>
           <td class='winner'><%= @display2.resolution %></td>
         <%else%>
@@ -101,40 +96,35 @@
     <tr>
       <td>Brand</td>
         <td><%= @display.brand %></td>
-        <td>?????</td>
         <td><%= @display2.brand %></td>
 
     </tr>
     <tr>
       <td>Aspect ratio</td>
         <td><%= @display.aspect_ratio %></td>
-        <td>?????</td>
         <td><%= @display2.aspect_ratio %></td>
 
     </tr>
      <tr>
       <td>Size</td>
         <td><%= @display.size %>''</td>
-        <td>?????</td>
         <td><%= @display2.size %>''</td>
 
     </tr>
     <tr>
       <td>Ports</td>
         <td><%= @display.ports %></td>
-        <td>?????</td>
         <td><%= @display2.ports %></td>
 
     </tr>
     <tr>
-      <td>Response time</td>
+      <td><%= link_to 'Response time', displays_path(sort:'response_time',direction: 'asc') %></td>
         <% if  @display.response_time < @display2.response_time%>
           <td class='winner'><%= @display.response_time %> ms</td>
         <%else%>
           <td><%= @display.response_time %> ms</td>
         <%end%>      
         
-        <td>?????</td>
         <% if  @display2.response_time < @display.response_time%>
           <td class='winner'><%= @display2.response_time %> ms</td>
         <%else%>
@@ -143,13 +133,12 @@
 
     </tr>
     <tr>
-      <td>Refresh rate</td>
+      <td><%= link_to 'Refresh Rate', displays_path(sort:'refresh_rate',direction: 'desc') %></td>
         <% if  @display.refresh_rate > @display2.refresh_rate%>
           <td class='winner'><%= @display.refresh_rate %> Hz</td>
         <%else%>
           <td><%= @display.refresh_rate %> Hz</td>
         <%end%>        
-        <td>?????</td>
         <% if  @display2.refresh_rate > @display.refresh_rate%>
           <td class='winner'><%= @display2.refresh_rate %> Hz</td>
         <%else%>
@@ -165,7 +154,6 @@
           <td><%= @display.speakers %></td>
         <%end%>            
         
-        <td>?????</td>
         <% if  @display2.speakers==true && @display.speakers==false%>
           <td class='winner'><%= @display2.speakers %></td>
         <%else%>
@@ -176,28 +164,24 @@
     <tr>
       <td>Dimensions</td>
         <td><%= @display.dimensions %></td>
-        <td>?????</td>
         <td><%= @display2.dimensions %></td>
 
     </tr>
     <tr>
       <td>Panel</td>
         <td><%= @display.panel %></td>
-        <td>?????</td>
         <td><%= @display2.panel %></td>
 
     </tr>
     <tr>
       <td>Release</td>
         <td><%= @display.release %></td>
-        <td>?????</td>
         <td><%= @display2.release %></td>
 
     </tr>
     <tr>
       <td>Stand misc</td>
         <td><%= @display.stand_misc %></td>
-        <td>?????</td>
         <td><%= @display2.stand_misc %></td>
 
     </tr>
@@ -209,7 +193,6 @@
           <td><%= @display.gpu_sync %></td>
         <%end%>        
         
-        <td>?????</td>
         <% if  @display2.gpu_sync.length>5 && @display.gpu_sync.length<5 %>
           <td class='winner'><%= @display2.gpu_sync %> </td>
         <%else%>

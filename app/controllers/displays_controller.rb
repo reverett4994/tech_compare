@@ -4,7 +4,11 @@ class DisplaysController < ApplicationController
   # GET /displays
   # GET /displays.json
   def index
-    @displays = Display.all
+    #next 2 lines say if nil equal ....
+    params[:sort] ||='name'
+    params[:direction] ||='ASC'
+
+    @displays=Display.order(params[:sort]+" "+ params[:direction] )
 
   end
 

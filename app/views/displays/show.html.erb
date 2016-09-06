@@ -20,8 +20,17 @@
 
 <%end%>
 
+<% @product_reviews = Amazon::Ecs.item_search(@asin, :search_index => 'All',:response_group =>'Reviews')%>
 
+<% @product_reviews.items.each do |item|%>
+  
+  <%@amazon_reviews_link=item.get('CustomerReviews/IFrameURL')%>
 
+<%end%>
+
+<% @amazon_reviews_link.gsub! 'amp;',''%>
+
+<%= link_to 'Amazon Reviews',@amazon_reviews_link%>
 
 <h1><%= link_to (@display.name),'#',:id=>'show_link', remote: true%></h1>
 
@@ -99,4 +108,23 @@
 <%= link_to 'Edit', edit_display_path(@display) %> |
 <%= link_to 'Back', displays_path %>
 
-<%=@display.resolution.to_d%>
+<%= link_to 'Amazon Page',@match.get('DetailPageURL')%>
+
+<%= link_to 'Amazon Reviews',@amazon_reviews_link%>
+
+
+
+
+
+<%= link_to 'Amazon Reviews Preview',"javascript:;",id:'review_preview'%>
+
+<br>
+
+<iframe id='reviews'src= <%= @amazon_reviews_link %>></iframe>
+
+
+
+
+
+
+
