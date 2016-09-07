@@ -9,7 +9,6 @@
 <%@asin=@match.get('ASIN')%>
 
 
-<%= link_to 'Amazon Page',@match.get('DetailPageURL')%>
 <%@match.get('DetailPageURL')%>
 
 <% @product = Amazon::Ecs.item_search(@asin, :search_index => 'All',:response_group =>'Offers')%>
@@ -30,81 +29,19 @@
 
 <% @amazon_reviews_link.gsub! 'amp;',''%>
 
-<%= link_to 'Amazon Reviews',@amazon_reviews_link%>
-
-<h1><%= link_to (@display.name),'#',:id=>'show_link', remote: true%></h1>
+<%if false%>---------------------------------------------------------------------------------<%end%>
 
 
-<div class='show'>
-    <%= image_tag @display.image.url,:class=>'image' %>
-    <p>
-    <strong>Price:</strong>
-    <%=link_to @amazon_price,@match.get('DetailPageURL')%>
-  </p>
-    <p>
-    <strong>Brand:</strong>
-    <%= @display.brand %>
-  </p>
-  <p>
-    <strong>Resolution:</strong>
-    <%= @display.resolution %>
-  </p>
 
-  <p>
-    <strong>Aspect ratio:</strong>
-    <%= @display.aspect_ratio %>
-  </p>
 
-  <p>
-    <strong>Size:</strong>
-    <%= @display.size %> in.
-  </p>
 
-  <p>
-    <strong>Ports:</strong>
-    <%= @display.ports %>
-  </p>
+<h1><%= (@display.name)%></h1>
 
-  <p>
-    <strong>Response time:</strong>
-    <%= @display.response_time %> ms
-  </p>
 
-  <p>
-    <strong>Refresh rate:</strong>
-    <%= @display.refresh_rate %> Hz
-  </p>
+<%= image_tag @display.image.url,:class=>'show_image' %>
 
-  <p>
-    <strong>Speakers:</strong>
-    <%= @display.speakers %>
-  </p>
+    
 
-  <p>
-    <strong>Dimensions:</strong>
-    <%= @display.dimensions %>
-  </p>
-
-  <p>
-    <strong>Panel:</strong>
-    <%= @display.panel %>
-  </p>
-
-  <p>
-    <strong>Release:</strong>
-    <%= @display.release.to_formatted_s(:month_comma_year)   %>
-  </p>
-
-  <p>
-    <strong>Stand misc:</strong>
-    <%= @display.stand_misc %>
-  </p>
-
-  <p>
-    <strong>Gpu sync:</strong>
-    <%= @display.gpu_sync %>
-  </p>
-</div>
 <%= link_to 'Edit', edit_display_path(@display) %> |
 <%= link_to 'Back', displays_path %>
 
@@ -114,17 +51,77 @@
 
 
 
+ <ul class="show_nav" id="my_show_nav">
+  <li><%= link_to 'Amazon Page',@match.get('DetailPageURL')%></li>
+  <li><%= link_to 'Specs',"javascript:;",id:'show_specs'%></li>
+  <li><%= link_to 'Amazon Reviews Preview',"javascript:;",id:'review_preview'%>
+</li>
+</ul>
 
 
-<%= link_to 'Amazon Reviews Preview',"javascript:;",id:'review_preview'%>
+
+
+<div id='show_table'>
+  <table>
+    <tr>
+      <td>Price</td>
+      <td><%=link_to @amazon_price,@match.get('DetailPageURL')%></td>
+    </tr>
+    <tr>
+      <td>Brand</td>
+      <td><%=@display.brand%></td>
+    </tr>
+    <tr>
+      <td>Resolution</td>
+      <td><%= @display.resolution%></td>
+    </tr>  
+    <tr>
+      <td>Aspect ratio</td>
+      <td><%= @display.aspect_ratio%></td>
+    </tr>  
+    <tr>
+      <td>Size</td>
+      <td><%= @display.size%> in.</td>
+    </tr>  
+    <tr>
+      <td>Ports</td>
+      <td><%= @display.ports%></td>
+    </tr>   
+    <tr>
+      <td>Response time</td>
+      <td><%= @display.response_time%> ms</td>
+    </tr>      
+    <tr>
+      <td>Refresh rate</td>
+      <td><%= @display.refresh_rate%> Hz</td>
+    </tr>      
+    <tr>
+      <td>Speakers</td>
+      <td><%= @display.speakers%></td>
+    </tr>      
+    <tr>
+      <td>Dimensions</td>
+      <td><%= @display.dimensions%></td>
+    </tr>       
+    <tr>
+      <td>Panel</td>
+      <td><%= @display.panel%></td>
+    </tr>     
+    <tr>
+      <td>Release</td>
+      <td><%= @display.release%></td>
+    </tr>     
+    <tr>
+      <td>Stand misc</td>
+      <td><%= @display.stand_misc%></td>
+    </tr>     
+    <tr>
+      <td>Gpu syn</td>
+      <td><%= @display.gpu_sync%></td>
+    </tr>                         
+  </table>
+</div>
 
 <br>
 
 <iframe id='reviews'src= <%= @amazon_reviews_link %>></iframe>
-
-
-
-
-
-
-

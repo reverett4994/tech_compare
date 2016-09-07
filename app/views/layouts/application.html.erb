@@ -9,10 +9,10 @@
 </head>
 <body>
 <%= form_tag(search_path, method: "get") do %>
-  <%= text_field_tag(:search,nil,:placeholder => 'Search for Product',:class=>'auto',data:{autocomplete_source: Display.order(:name).map(&:name)}) %>
+  <%= text_field_tag(:search,nil,:placeholder => 'Compare Product',:class=>'auto',data:{autocomplete_source: Display.order(:name).map(&:name)}) %>
 
-  <%= text_field_tag(:search2,nil,:placeholder => 'Search for Product',:class=>'auto',data:{autocomplete_source: Display.order(:name).map(&:name)}) %>
-   <%= submit_tag("Search") %>
+  <%= text_field_tag(:search2,nil,:placeholder => 'Compare Product',:class=>'auto',data:{autocomplete_source: Display.order(:name).map(&:name)}) %>
+   <%= submit_tag("Compare") %>
 <% end %>
 
 <%= yield %>

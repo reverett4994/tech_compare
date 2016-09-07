@@ -107,8 +107,17 @@
     </tr>
      <tr>
       <td>Size</td>
-        <td><%= @display.size %>''</td>
-        <td><%= @display2.size %>''</td>
+        <% if  @display.size> @display2.size%>
+          <td class='winner'><%= @display.size %>''</td>
+        <%else%>
+          <td><%= @display.size %>''</td>
+        <%end%>      
+
+        <% if  @display2.size> @display.size%>
+          <td class='winner'><%= @display2.size %>''</td>
+        <%else%>
+          <td><%= @display2.size %>''</td>
+        <%end%>    
 
     </tr>
     <tr>
