@@ -29,7 +29,14 @@
 
 <% @amazon_reviews_link.gsub! 'amp;',''%>
 
-<%if false%>---------------------------------------------------------------------------------<%end%>
+<%if false%>--------------------------------------------------------------------------
+<%= link_to 'Edit', edit_display_path(@display) %> |
+<%= link_to 'Back', displays_path %>
+
+<%= link_to 'Amazon Page',@match.get('DetailPageURL')%>
+
+<%= link_to 'Amazon Reviews',@amazon_reviews_link%>
+<%end%>
 
 
 
@@ -42,19 +49,14 @@
 
     
 
-<%= link_to 'Edit', edit_display_path(@display) %> |
-<%= link_to 'Back', displays_path %>
 
-<%= link_to 'Amazon Page',@match.get('DetailPageURL')%>
-
-<%= link_to 'Amazon Reviews',@amazon_reviews_link%>
 
 
 
  <ul class="show_nav" id="my_show_nav">
   <li><%= link_to 'Amazon Page',@match.get('DetailPageURL')%></li>
   <li><%= link_to 'Specs',"javascript:;",id:'show_specs'%></li>
-  <li><%= link_to 'Amazon Reviews Preview',"javascript:;",id:'review_preview'%>
+  <li><%= link_to 'Amazon Reviews',"javascript:;",id:'review_preview'%>
 </li>
 </ul>
 
@@ -125,3 +127,5 @@
 <br>
 
 <iframe id='reviews'src= <%= @amazon_reviews_link %>></iframe>
+
+<%= link_to 'Brand Sort', displays_path(:sort=>'brand',:direction=>'ASC') %>

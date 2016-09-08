@@ -110,6 +110,35 @@ iframe{
 }
 
 
+ /********************************************LISTING PAGE******************************************/
+
+
+.listing{
+	background-color: #e6e6e6;
+	border: 5px solid blue;
+	display: block;
+	text-align:left;
+	overflow:hidden;
+}
+
+.listing_image{
+    width: 240px; 
+    height: 150px;
+    margin-right: 9px;
+    float: left;
+}
+
+.listing_name{
+	font-size: 27px;
+	vertical-align: top;
+	display: inline-block;
+	font-weight: bold;
+}
+.listing ul{
+	list-style: none;
+}
+
+
 
 
  /********************************************SHOW PAGE******************************************/
@@ -117,8 +146,8 @@ iframe{
 .show_image{
     height: auto; 
     width: auto; 
-    max-width: 800px; 
-    max-height: 800px;
+    max-width: 1000px; 
+    max-height: 1000px;
     display: block;
     margin-left: auto;
     margin-right: auto;

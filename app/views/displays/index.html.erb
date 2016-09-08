@@ -57,4 +57,7 @@
 
 
 <%= link_to 'Amazon Reviews Preview',"javascript:;",id:'review_preview'%>
-<p id="reviews">sdfkjhdshfkkdfhksdhf</p>
+
+ <% @displays.each do |display| %>
+    <%= render 'display_listing',:display=>display%>
+  <% end %>

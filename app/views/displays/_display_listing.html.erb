@@ -1,0 +1,14 @@
+<div class='listing'>
+	<%= image_tag display.image.url,:class=>'listing_image' %>
+	<%= link_to display.name, display,:class=>'listing_name' %>
+
+	<ul>
+		<li>Price: <%= number_to_currency(display.Price) %></li>
+		<li>Resolution: <%= display.resolution %></li>
+		<li>Size: <%= display.size  %> ''</li>
+		<li>Aspect Ratio: <%= display.aspect_ratio %></li>
+		<li>Response Time: <%= display.response_time %> ms</li>
+		<li>Refresh Rate: <%= display.refresh_rate %> Hz</li>
+	</ul>
+
+</div>

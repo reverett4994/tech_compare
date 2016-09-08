@@ -57,13 +57,13 @@
       <td> <%=link_to (image_tag(@display2.image.url)),@display2%> </td>
      
     <tr>
-       <td>Name</td>
+      <td><%= link_to 'Name', displays_path(sort:'name',direction: 'asc') %></td>
        <td><%= @display.name %></td>
        <td><%= @display2.name %></td>
 
     </tr>
     <tr>
-      <td>Price</td>
+      <td><%= link_to 'Price', displays_path(sort:'Price',direction: 'asc') %></td>
       
         <% if  @display.Price< @display2.Price%>
           <td class='winner'><%= link_to @amazon_price1,@match.get('DetailPageURL') %></td>
@@ -79,7 +79,7 @@
     </tr>
 
     <tr>
-      <td>Resolution</td>
+      <td><%= link_to 'Resolution', displays_path(sort:'resolution',direction: 'asc') %></td>
         <% if  @display.resolution.to_d > @display2.resolution.to_d%>
           <td class='winner'><%= @display.resolution %></td>
         <%else%>
@@ -94,19 +94,19 @@
 
     </tr>
     <tr>
-      <td>Brand</td>
+      <td><%= link_to 'Brand', displays_path(sort:'brand',direction: 'asc') %></td>
         <td><%= @display.brand %></td>
         <td><%= @display2.brand %></td>
 
     </tr>
     <tr>
-      <td>Aspect ratio</td>
+      <td><%= link_to 'Aspect Ratio', displays_path(sort:'aspect_ratio',direction: 'asc') %></td>
         <td><%= @display.aspect_ratio %></td>
         <td><%= @display2.aspect_ratio %></td>
 
     </tr>
      <tr>
-      <td>Size</td>
+      <td><%= link_to 'Size', displays_path(sort:'size',direction: 'asc') %></td>
         <% if  @display.size> @display2.size%>
           <td class='winner'><%= @display.size %>''</td>
         <%else%>
@@ -156,7 +156,7 @@
 
     </tr>
      <tr>
-      <td>Speakers</td>
+      <td><%= link_to 'Speakers', displays_path(sort:'speakers',direction: 'asc') %></td>
         <% if  @display.speakers==true && @display2.speakers==false%>
           <td class='winner'><%= @display.speakers %></td>
         <%else%>
@@ -177,7 +177,7 @@
 
     </tr>
     <tr>
-      <td>Panel</td>
+      <td><%= link_to 'Panel', displays_path(sort:'panel',direction: 'asc') %></td>
         <td><%= @display.panel %></td>
         <td><%= @display2.panel %></td>
 
@@ -195,7 +195,7 @@
 
     </tr>
     <tr>
-      <td>g/free sync</td>
+      <td><%= link_to 'G/Free Sync', displays_path(sort:'gpu_sync',direction: 'desc') %></td>
         <% if  @display.gpu_sync.length>5 && @display2.gpu_sync.length<5 %>
           <td class='winner'><%= @display.gpu_sync %> </td>
         <%else%>
