@@ -1,6 +1,7 @@
 class DisplaysController < ApplicationController
   require 'amazon/ecs'
   before_action :set_display, only: [:show, :edit, :update, :destroy]
+  WillPaginate.per_page = 5
   # GET /displays
   # GET /displays.json
   def index
@@ -9,6 +10,7 @@ class DisplaysController < ApplicationController
     params[:direction] ||='ASC'
 
     @displays=Display.order(params[:sort]+" "+ params[:direction] )
+    @displays=@displays.paginate(:page=>params[:page])
 
   end
 

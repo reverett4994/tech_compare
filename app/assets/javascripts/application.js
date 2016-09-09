@@ -17,3 +17,8 @@
 //= require_tree .
 //= requiree jquery-ui/autocomplete
 //= requiree autocomplete-rails
+//= require turbolinks
+
+
+
+

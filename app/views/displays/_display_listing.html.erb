@@ -1,14 +1,25 @@
+
+<%= link_to display do %>
 <div class='listing'>
 	<%= image_tag display.image.url,:class=>'listing_image' %>
-	<%= link_to display.name, display,:class=>'listing_name' %>
 
-	<ul>
+	<ul class="listing_text">
+		<li class='sliding-middle-out'><%= display.name %></li>
 		<li>Price: <%= number_to_currency(display.Price) %></li>
 		<li>Resolution: <%= display.resolution %></li>
 		<li>Size: <%= display.size  %> ''</li>
 		<li>Aspect Ratio: <%= display.aspect_ratio %></li>
-		<li>Response Time: <%= display.response_time %> ms</li>
 		<li>Refresh Rate: <%= display.refresh_rate %> Hz</li>
 	</ul>
+ 	
+  	<span class="tooltiptext">
+	  	<ul>
+			<li>Response Time: <%= display.response_time %> ms</li>
+			<li>Panel Type:<%= display.panel %></li>
+			<li>Release: <%= display.release %></li>
+			<li>G/Free Sync: <%= display.gpu_sync %></li>
+		</ul>
+  	</span>
 
 </div>
+<%end%>

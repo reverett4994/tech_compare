@@ -8,6 +8,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<ul class="topnav" id="myTopnav">
+  <li><%= link_to 'Home', '#' %></li>
+  <li><%= link_to 'Monitors', displays_path %></li>
+  <li><%= link_to 'Compare', '#' %></li>
+  <li><a href="#about">About</a></li>
+  <li class="icon">
+    <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+  </li>
+</ul>
 <%= form_tag(search_path, method: "get") do %>
   <%= text_field_tag(:search,nil,:placeholder => 'Compare Product',:class=>'auto',data:{autocomplete_source: Display.order(:name).map(&:name)}) %>
 

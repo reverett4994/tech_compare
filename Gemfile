@@ -57,3 +57,8 @@ gem 'jquery-ui-rails'
 
 
 gem 'amazon-ecs'
+
+gem 'will_paginate', '~> 3.1.0'
+
+#Dont think you need this
+gem 'jquery-turbolinks'
