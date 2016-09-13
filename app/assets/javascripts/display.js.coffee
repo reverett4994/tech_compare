@@ -1,6 +1,8 @@
 ready = ->
 	jQuery ->
-	  $(".show_image").addClass('big')	
+	  $(".show_image").addClass('big')
+	  if $(".show_image").hasClass('big')
+	    $(".show_image").animate {width:1000},0  	
 	  $(".auto").autocomplete 
 	    source: $(".auto").data('autocomplete-source')
 	  $("#review_preview").click ->
@@ -19,6 +21,8 @@ ready = ->
          scrollTop: $("#reviews").offset().top
         }, 2000);
 
+  
+
 myFunction = ->
   x = document.getElementById('myTopnav')
   if x.className == 'topnav'
@@ -26,6 +30,14 @@ myFunction = ->
   else
     x.className = 'topnav'
   return
+
+dropdown = ->
+ $("#compare_div a").click ->
+   $(".auto").fadeToggle()
+home = ->
+	jQuery ->
+	 $(".auto_home").autocomplete 
+	  source: $(".auto_home").data('autocomplete-source')
  
 #$(document).ready(ready)
 #$(document).on('page:load', ready)
@@ -34,4 +46,6 @@ myFunction = ->
 $(document).on 'turbolinks:load', ->
  ready() 
  myFunction()
+ dropdown()
+ home()
 

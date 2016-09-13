@@ -69,11 +69,20 @@ class DisplaysController < ApplicationController
     end
   end
   def search
+ 
     @search=params[:search]
     @search2=params[:search2]
+
     @display=Display.find_by('name LIKE ?',@search )
-    @display2=Display.find_by('name LIKE ?',@search2 )
-   
+    @display2=Display.find_by('name LIKE ?',@search2 )   
+
+        if params[:search]=="" or params[:search2]==""
+      redirect_to (:back)
+      flash[:alert]='Only one item was compared you need two!'
+    elsif @display==nil or @display2==nil
+      redirect_to (:back)
+      flash[:alert]='One or more items was not found, try again!'
+    end   
   end
 
   # DELETE /displays/1
@@ -84,6 +93,9 @@ class DisplaysController < ApplicationController
       format.html { redirect_to displays_url, notice: 'Display was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  def home
+
   end
 
   private

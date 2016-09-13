@@ -7,7 +7,7 @@
 <%@asin=@match.get('ASIN')%>
 
 
-<%= link_to 'Amazon Page',@match.get('DetailPageURL')%>
+
 <%@match.get('DetailPageURL')%>
 
 <% @product = Amazon::Ecs.item_search(@asin, :search_index => 'All',:response_group =>'Offers')%>
@@ -26,7 +26,7 @@
 <%@asin2=@match2.get('ASIN')%>
 
 
-<%= link_to 'Amazon Page',@match2.get('DetailPageURL')%>
+
 <%@match2.get('DetailPageURL')%>
 
 <% @product2 = Amazon::Ecs.item_search(@asin2, :search_index => 'All',:response_group =>'Offers')%>

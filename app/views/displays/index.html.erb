@@ -2,7 +2,6 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Showing Monitors by <%=params[:sort]%></h1>
 
 <% if false%>
   <div style="overflow-x:auto;">
@@ -84,26 +83,7 @@
 </div>
 
 
-<div id='side_nav'>
-  <ul>
-    <li><%= sortable 'Name' %></li>
-    <li><%= sortable 'Price' %></li>
-    <li><%= sortable 'Resolution' %></li>
-    <li><%= sortable 'Brand' %></li>
-    <li><%= sortable 'aspect_ratio', 'Aspect Ratio' %></li>
-    <li><%= sortable 'Size' %></li>
-    <li><%=  'Ports' %></li>
-    <li><%= sortable 'response_time', 'Response time' %></li>
-    <li><%= sortable 'refresh_rate', 'Refresh rate' %></li>
-    <li><%= sortable 'Speakers' %></li>
-    <li><%=  'Dimensions' %></li>
-    <li><%= sortable 'Panel' %></li>
-    <li><%=  'Release' %></li>
-    <li><%= sortable 'stand_misc', 'Stand misc' %></li>
-    <li><%= sortable 'gpu_sync', 'Gpu sync' %></li>
-    </ul>
-</div>
-
+<%= render 'side_nav' %>
 
 
 <div id='all_listings_dad'>
@@ -115,7 +95,7 @@
 </div>
 
 
-<div class="apple_pagination">
+<div class="apple_pagination_bottom">
   <div class="page_info">
     <%= page_entries_info @posts %>
   </div>

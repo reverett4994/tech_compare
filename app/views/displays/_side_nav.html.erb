@@ -1,0 +1,115 @@
+<div id='side_nav'>
+  <ul>
+    <% if params[:sort] == 'Name'%>
+
+      <li id='active_sort'><%= sortable 'Name'%>
+      <%= image_tag 'sort-arrow.png', class: 'asc' if params[:direction]=='asc'%>
+      <%= image_tag 'sort-arrow.png', class: 'desc' if params[:direction]=='desc'%>
+      </li>
+
+    <%else%>
+      <li><%= sortable 'Name' %></li>
+    <%end%>
+
+    <% if params[:sort] == 'Price'%>
+      <li id='active_sort'><%= sortable 'Price' %>
+      <%= image_tag 'sort-arrow.png', class: 'asc' if params[:direction]=='asc'%>
+      <%= image_tag 'sort-arrow.png', class: 'desc' if params[:direction]=='desc'%>
+      </li>
+
+    <%else%>
+      <li><%= sortable 'Price' %></li>
+    <%end%> 
+
+    <% if params[:sort] == 'Resolution'%>
+      <li id='active_sort'><%= sortable 'Resolution' %>
+      <%= image_tag 'sort-arrow.png', class: 'asc' if params[:direction]=='asc'%>
+      <%= image_tag 'sort-arrow.png', class: 'desc' if params[:direction]=='desc'%>
+      </li>
+    <%else%>
+      <li><%= sortable 'Resolution' %></li>
+    <%end%>
+
+    <% if params[:sort] == 'Brand'%>
+      <li id='active_sort'><%= sortable 'Brand' %>
+      <%= image_tag 'sort-arrow.png', class: 'asc' if params[:direction]=='asc'%>
+      <%= image_tag 'sort-arrow.png', class: 'desc' if params[:direction]=='desc'%>
+      </li>
+    <%else%>
+      <li><%= sortable 'Brand' %></li>
+    <%end%>
+
+    <% if params[:sort] == 'aspect_ratio'%>
+      <li id='active_sort'><%= sortable 'aspect_ratio', 'Aspect Ratio' %>
+      <%= image_tag 'sort-arrow.png', class: 'asc' if params[:direction]=='asc'%>
+      <%= image_tag 'sort-arrow.png', class: 'desc' if params[:direction]=='desc'%>
+      </li>
+    <%else%>
+      <li><%= sortable 'aspect_ratio', 'Aspect Ratio' %></li>
+    <%end%>
+
+    <% if params[:sort] == 'Size'%>
+      <li id='active_sort'><%= sortable 'Size' %>
+      <%= image_tag 'sort-arrow.png', class: 'asc' if params[:direction]=='asc'%>
+      <%= image_tag 'sort-arrow.png', class: 'desc' if params[:direction]=='desc'%>
+      </li>
+    <%else%>
+      <li><%= sortable 'Size' %></li>
+    <%end%>
+
+    <% if params[:sort] == 'response_time'%>
+      <li id='active_sort'><%= sortable 'response_time', 'Response time' %>
+      <%= image_tag 'sort-arrow.png', class: 'asc' if params[:direction]=='asc'%>
+      <%= image_tag 'sort-arrow.png', class: 'desc' if params[:direction]=='desc'%>
+      </li>
+    <%else%>
+      <li><%= sortable 'response_time', 'Response time' %></li>
+    <%end%>
+
+    <% if params[:sort] == 'refresh_rate'%>
+      <li id='active_sort'><%= sortable 'refresh_rate', 'Refresh rate' %>
+      <%= image_tag 'sort-arrow.png', class: 'asc' if params[:direction]=='asc'%>
+      <%= image_tag 'sort-arrow.png', class: 'desc' if params[:direction]=='desc'%>
+      </li>
+    <%else%>
+      <li><%= sortable 'refresh_rate', 'Refresh rate' %></li>
+    <%end%>  
+
+    <% if params[:sort] == 'Speakers'%>
+      <li id='active_sort'><%= sortable 'Speakers' %>
+      <%= image_tag 'sort-arrow.png', class: 'asc' if params[:direction]=='asc'%>
+      <%= image_tag 'sort-arrow.png', class: 'desc' if params[:direction]=='desc'%>
+      </li>
+    <%else%>
+      <li><%= sortable 'Speakers' %></li>
+    <%end%>
+
+    <% if params[:sort] == 'Panel'%>
+      <li id='active_sort'><%= sortable 'Panel' %>
+      <%= image_tag 'sort-arrow.png', class: 'asc' if params[:direction]=='asc'%>
+      <%= image_tag 'sort-arrow.png', class: 'desc' if params[:direction]=='desc'%>
+      </li>
+    <%else%>
+      <li><%= sortable 'Panel' %></li>
+    <%end%>
+
+    <% if params[:sort] == 'stand_misc'%>
+      <li id='active_sort'><%= sortable 'stand_misc', 'Stand misc' %>
+      <%= image_tag 'sort-arrow.png', class: 'asc' if params[:direction]=='asc'%>
+      <%= image_tag 'sort-arrow.png', class: 'desc' if params[:direction]=='desc'%>
+      </li>
+    <%else%>
+      <li><%= sortable 'stand_misc', 'Stand misc' %></li>
+    <%end%>
+
+    <% if params[:sort] == 'gpu_sync'%>
+      <li id='active_sort'><%= sortable 'gpu_sync', 'Gpu sync' %>
+      <%= image_tag 'sort-arrow.png', class: 'asc' if params[:direction]=='asc'%>
+      <%= image_tag 'sort-arrow.png', class: 'desc' if params[:direction]=='desc'%>
+      </li>
+    <%else%>
+      <li><%= sortable 'gpu_sync', 'Gpu sync' %></li>
+    <%end%>   
+     
+    </ul>
+</div>
