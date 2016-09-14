@@ -95,7 +95,8 @@ class DisplaysController < ApplicationController
     end
   end
   def home
-
+  end
+  def about
   end
 
   private

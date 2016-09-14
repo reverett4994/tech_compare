@@ -62,3 +62,5 @@ gem 'will_paginate', '~> 3.1.0'
 
 #Dont think you need this
 gem 'jquery-turbolinks'
+
+gem 'mail_form'

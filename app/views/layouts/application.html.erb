@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
+  <link href="https://fonts.googleapis.com/css?family=Francois+One|Open+Sans" rel="stylesheet">
+
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -21,7 +23,7 @@
       <%= submit_tag("Compare",class: 'auto',id: 'compare_btn') %>
     <% end %>
   </li>
-  <li><a href="#about">About</a></li>
+  <li><%= link_to 'About','/about'%></li>
   <li class="icon">
     <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
   </li>
