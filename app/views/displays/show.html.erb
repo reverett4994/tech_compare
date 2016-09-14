@@ -67,7 +67,8 @@
   <table>
     <tr>
       <td>Price</td>
-      <td><%=link_to @amazon_price,@match.get('DetailPageURL')%></td>
+      <%if false%><td><%=link_to @amazon_price,@match.get('DetailPageURL')%></td><%end%>
+      <td><%=number_to_currency(@display.Price)%></td>
     </tr>
     <tr>
       <td>Brand</td>

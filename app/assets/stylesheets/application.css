@@ -164,7 +164,9 @@ ul.topnav li.icon {display: none;}
 
 
  /********************************************COMPARE PAGE******************************************/
-
+#compare_table{
+  border-collapse: collapse;
+}
 #compare_table{
 	width: 97%;
   text-align:center;
@@ -177,9 +179,7 @@ ul.topnav li.icon {display: none;}
 #compare_table th a{
   color: white;
 }
-#compare_table tr:hover{
-	background-color: #f5f5f5
-}
+
 #compare_table th,td{
 	border-bottom: 1px solid #ddd;
 	width: 20%;
@@ -191,9 +191,20 @@ ul.topnav li.icon {display: none;}
 	width: 200px;
 }
 #compare_table td.winner{
-	 background-image: url('check.png');
+	background-image: url('check.png');
   background-repeat: no-repeat;
   background-position: right;
+}
+/*For the right col*/
+#compare_table td.winnerr{
+  background-image: url('check.png');
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+col.middle {
+  border-left: 2px solid #ddd;
+  border-right: 2px solid #ddd;
 }
  /********************************************INDEX******************************************/
 /*http://www.flaticon.com     <-- for more icons use*/
@@ -722,5 +733,12 @@ ul.show_nav li.icon {display: none;}
 }
 #email_div input[type='submit']:hover{
   background-color: #f4420b;
+}
+#email_div .hidden{
+  display: none;
+}
+
+#sent_email_div{
+  text-align: center;
 }
 

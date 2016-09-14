@@ -43,35 +43,43 @@
 
 
 <table id='compare_table'>
-  
+    <colgroup>
+    <col span="1" class="left">
+    <col span="1" class="middle">
+    <col span="1" class="right">
+    </colgroup>
     <tr id='table_head'>
-       <th>Categories</th>
+       
        <th><%= link_to @display.name,@display %></th>
+       <th>Categories</th>
        <th><%= link_to @display2.name,@display2 %></th>
     </tr>
         
 
     <tr>
-      <td> </td>
+      
       <td> <%=link_to (image_tag(@display.image.url)),@display%> </td>
+      <td> </td>
       <td> <%=link_to (image_tag(@display2.image.url)),@display2%> </td>
      
     <tr>
-      <td><%= link_to 'Name', displays_path(sort:'name',direction: 'asc') %></td>
+      
        <td><%= @display.name %></td>
+       <td><%= link_to 'Name', displays_path(sort:'name',direction: 'asc') %></td>
        <td><%= @display2.name %></td>
 
     </tr>
     <tr>
-      <td><%= link_to 'Price', displays_path(sort:'Price',direction: 'asc') %></td>
+      
       
         <% if  @display.Price< @display2.Price%>
           <td class='winner'><%= link_to @amazon_price1,@match.get('DetailPageURL') %></td>
         <%else%>
           <td><%= link_to @amazon_price1,@match.get('DetailPageURL') %></td>
         <%end%>
+        <td><%= link_to 'Price', displays_path(sort:'Price',direction: 'asc') %></td>
         <% if  @display2.Price< @display.Price%>
-          <td class='winner'><%= link_to @amazon_price2,@match2.get('DetailPageURL') %></td>
+          <td class='winnerr'><%= link_to @amazon_price2,@match2.get('DetailPageURL') %></td>
         <%else%>
           <td><%= link_to @amazon_price2,@match2.get('DetailPageURL') %></td>
         <%end%>      
@@ -79,131 +87,139 @@
     </tr>
 
     <tr>
-      <td><%= link_to 'Resolution', displays_path(sort:'resolution',direction: 'asc') %></td>
+      
         <% if  @display.resolution.to_d > @display2.resolution.to_d%>
           <td class='winner'><%= @display.resolution %></td>
         <%else%>
           <td><%= @display.resolution %></td>
         <%end%>          
-        
+        <td><%= link_to 'Resolution', displays_path(sort:'resolution',direction: 'asc') %></td>
         <% if  @display2.resolution.to_d > @display.resolution.to_d%>
-          <td class='winner'><%= @display2.resolution %></td>
+          <td class='winnerr'><%= @display2.resolution %></td>
         <%else%>
           <td><%= @display2.resolution %></td>
         <%end%>         
 
     </tr>
     <tr>
-      <td><%= link_to 'Brand', displays_path(sort:'brand',direction: 'asc') %></td>
+      
         <td><%= @display.brand %></td>
+        <td><%= link_to 'Brand', displays_path(sort:'brand',direction: 'asc') %></td>
         <td><%= @display2.brand %></td>
 
     </tr>
     <tr>
-      <td><%= link_to 'Aspect Ratio', displays_path(sort:'aspect_ratio',direction: 'asc') %></td>
+      
         <td><%= @display.aspect_ratio %></td>
+        <td><%= link_to 'Aspect Ratio', displays_path(sort:'aspect_ratio',direction: 'asc') %></td>
         <td><%= @display2.aspect_ratio %></td>
 
     </tr>
      <tr>
-      <td><%= link_to 'Size', displays_path(sort:'size',direction: 'asc') %></td>
+      
         <% if  @display.size> @display2.size%>
           <td class='winner'><%= @display.size %>''</td>
         <%else%>
           <td><%= @display.size %>''</td>
         <%end%>      
-
+        <td><%= link_to 'Size', displays_path(sort:'size',direction: 'asc') %></td>
         <% if  @display2.size> @display.size%>
-          <td class='winner'><%= @display2.size %>''</td>
+          <td class='winnerr'><%= @display2.size %>''</td>
         <%else%>
           <td><%= @display2.size %>''</td>
         <%end%>    
 
     </tr>
     <tr>
-      <td>Ports</td>
+      
         <td><%= @display.ports %></td>
+        <td>Ports</td>
         <td><%= @display2.ports %></td>
 
     </tr>
     <tr>
-      <td><%= link_to 'Response time', displays_path(sort:'response_time',direction: 'asc') %></td>
+      
         <% if  @display.response_time < @display2.response_time%>
           <td class='winner'><%= @display.response_time %> ms</td>
         <%else%>
           <td><%= @display.response_time %> ms</td>
         <%end%>      
-        
+        <td><%= link_to 'Response time', displays_path(sort:'response_time',direction: 'asc') %></td>
         <% if  @display2.response_time < @display.response_time%>
-          <td class='winner'><%= @display2.response_time %> ms</td>
+          <td class='winnerr'><%= @display2.response_time %> ms</td>
         <%else%>
           <td><%= @display2.response_time %> ms</td>
         <%end%>  
 
     </tr>
     <tr>
-      <td><%= link_to 'Refresh Rate', displays_path(sort:'refresh_rate',direction: 'desc') %></td>
+      
         <% if  @display.refresh_rate > @display2.refresh_rate%>
           <td class='winner'><%= @display.refresh_rate %> Hz</td>
         <%else%>
           <td><%= @display.refresh_rate %> Hz</td>
-        <%end%>        
+        <%end%>     
+        <td><%= link_to 'Refresh Rate', displays_path(sort:'refresh_rate',direction: 'desc') %></td>   
         <% if  @display2.refresh_rate > @display.refresh_rate%>
-          <td class='winner'><%= @display2.refresh_rate %> Hz</td>
+          <td class='winnerr'><%= @display2.refresh_rate %> Hz</td>
         <%else%>
           <td><%= @display2.refresh_rate %> Hz</td>
         <%end%>    
 
     </tr>
      <tr>
-      <td><%= link_to 'Speakers', displays_path(sort:'speakers',direction: 'asc') %></td>
+      
         <% if  @display.speakers==true && @display2.speakers==false%>
           <td class='winner'><%= @display.speakers %></td>
         <%else%>
           <td><%= @display.speakers %></td>
         <%end%>            
-        
+        <td><%= link_to 'Speakers', displays_path(sort:'speakers',direction: 'asc') %></td>
         <% if  @display2.speakers==true && @display.speakers==false%>
-          <td class='winner'><%= @display2.speakers %></td>
+          <td class='winnerr'><%= @display2.speakers %></td>
         <%else%>
           <td><%= @display2.speakers %></td>
         <%end%>    
 
     </tr>
     <tr>
-      <td>Dimensions</td>
+      
         <td><%= @display.dimensions %></td>
+        <td>Dimensions</td>
         <td><%= @display2.dimensions %></td>
 
     </tr>
     <tr>
-      <td><%= link_to 'Panel', displays_path(sort:'panel',direction: 'asc') %></td>
+     
         <td><%= @display.panel %></td>
+         <td><%= link_to 'Panel', displays_path(sort:'panel',direction: 'asc') %></td>
         <td><%= @display2.panel %></td>
 
     </tr>
     <tr>
-      <td>Release</td>
+     
         <td><%= @display.release %></td>
+         <td>Release</td>
         <td><%= @display2.release %></td>
 
     </tr>
     <tr>
-      <td>Stand misc</td>
-        <td><%= @display.stand_misc %></td>
-        <td><%= @display2.stand_misc %></td>
+              <td><%= @display.stand_misc %></td>
+              <td>Stand misc</td>
+
+              <td><%= @display2.stand_misc %></td>
 
     </tr>
     <tr>
-      <td><%= link_to 'G/Free Sync', displays_path(sort:'gpu_sync',direction: 'desc') %></td>
+     
         <% if  @display.gpu_sync.length>5 && @display2.gpu_sync.length<5 %>
           <td class='winner'><%= @display.gpu_sync %> </td>
         <%else%>
           <td><%= @display.gpu_sync %></td>
         <%end%>        
-        
+         <td><%= link_to 'G/Free Sync', displays_path(sort:'gpu_sync',direction: 'desc') %></td>
         <% if  @display2.gpu_sync.length>5 && @display.gpu_sync.length<5 %>
-          <td class='winner'><%= @display2.gpu_sync %> </td>
+          <td class='winnerr'><%= @display2.gpu_sync %> </td>
         <%else%>
           <td><%= @display2.gpu_sync %></td>
         <%end%> 

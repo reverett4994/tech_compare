@@ -1,0 +1,21 @@
+
+<div id='about_div'>
+	<h2>Status of Site</h2>
+	<p>Currently only of a few monitors listed, and plan on adding more and possibly other products besides monitors.If you have a comments or requests about this humble site please email me using the form below.Thanks for visting!
+</div>
+<div id='email_div'>
+	<%= form_for @contact do |f| %>
+		<%=f.label :name %><br>
+		<%=f.text_field :name %>
+		<%=f.label :email,'Your Email' %><br>
+		<%=f.text_field :email %>
+		<%=f.label :message %><br>
+		<%=f.text_area :message, as: :text %>	
+		<div class='hidden'>
+			<%=f.label :nickname %><br>
+			<%=f.text_field :nickname, hint: 'leave blank please' %>			
+		</div>	
+		<%= f.submit 'Send Email'%>
+	<%end%>
+
+</div>
