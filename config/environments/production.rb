@@ -96,4 +96,7 @@ end
 
   config.serve_static_assets = true
   config.assets.compile = true
+
+  config.action_mailer.default_url_options={host:'http://http://desolate-plains-12561.herokuapp.com'}
+  config.action_mailer.delivery_method=:smtp
 end
