@@ -1,6 +1,6 @@
 <div class='background-1'></div>
 <div id='home_title'>
-	<h1 id='title_h1'>WELCOME TO TECHCOMPARE.COM!!!</h1>
+	<h1 id='title_h1'>Welcome To MonitorMatchUp.com!</h1>
 </div>
 <div class='background0'></div>
 <div id='home_compare_div'>
@@ -13,7 +13,7 @@
 		 	<span>Compare </span> 
 		<% end %>
  	<% end %>
- 	<h2>Currently only have monitors listed</h2>
+ 	<h2>Search by Name of Monitor</h2>
 </div>
 
 <div class='background1'></div>
@@ -40,8 +40,8 @@
 			<th><%= link_to 'Speakers', displays_path(sort:'speakers',direction: 'asc') %></th>
 			<th><%= link_to 'Panel', displays_path(sort:'panel',direction: 'asc') %></th>
 		</tr>
-		<tr>
-			<th><%= link_to 'G/Free Sync', displays_path(sort:'gpu_sync',direction: 'desc') %></th>
+		<tr >
+			<th id='home_last_row'><%= link_to 'G/Free Sync', displays_path(sort:'gpu_sync',direction: 'desc') %></th>
 		</tr>	
 	</table>
 </div>

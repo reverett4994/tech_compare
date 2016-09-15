@@ -534,6 +534,7 @@ ul.show_nav li.icon {display: none;}
   height: 100px;
   color: white;
   text-align: center;
+  overflow: hidden;
 }
 #home_title #title_h1{
   margin: 0;
@@ -666,6 +667,8 @@ ul.show_nav li.icon {display: none;}
   background: #333;
   border: 0;
   text-align: center;
+  overflow: hidden;
+  margin-bottom: -7.5px;
 }
 #home_sort_div h2{
   text-align: center;
