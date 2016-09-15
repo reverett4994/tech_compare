@@ -67,3 +67,6 @@ gem 'mail_form'
 
 
 gem 'rails_12factor', group: :production
+
+gem 'rails_stdout_logging' 
+gem 'rails_serve_static_assets'
