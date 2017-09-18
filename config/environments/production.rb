@@ -89,9 +89,9 @@ Rails.application.configure do
   }
 
   Amazon::Ecs.configure do |options|
-  options[:AWS_access_key_id] = ENV.fetch('AWS_ACCESS_KEY_ID')
-  options[:AWS_secret_key] = ENV.fetch('AWS_SECRET_ACCESS_KEY')
-  options[:associate_tag] = 'techcompare-20'
+    options[:AWS_access_key_id] = ENV.fetch('AWS_associate_ACCESS_KEY_ID')
+    options[:AWS_secret_key] = ENV.fetch('AWS_associate_SECRET_ACCESS_KEY')
+    options[:associate_tag] = 'monitormatc0e-20'
 end
 
   config.serve_static_assets = true
